@@ -1,0 +1,16 @@
+<nav class="home-nav">
+  <div class="logo">
+    <img src="/imagenes/letrasblancas2.png" alt="">
+  </div>
+  <div class="logo-image">
+    <img src="/imagenes/logosolo.png" alt="">
+  </div>
+  <label for="menu"><i class="fas fa-bars"></i></label>
+  <input type="checkbox" name="menu" id="menu">
+  <ul class="nav-menu">
+    <li class="menu-li"><i class="icons fas fa-home"></i><%= link_to  "Inicio", root_path %></li>
+    <li class="menu-li"><i class="icons fas fa-drumstick-bite"></i><%= link_to  "Combos", root_path %></li>
+    <li class="menu-li"><i class="icons fas fa-shopping-bag"></i><%= link_to  "Pedidos", root_path %></li>
+    <li class="menu-li"><i class="icons fas fa-user"></i><%= link_to  "Mi Cuenta", root_path %></li>
+  </ul>
+</nav>
