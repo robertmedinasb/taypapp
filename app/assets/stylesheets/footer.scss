@@ -1,0 +1,99 @@
+$base-color: #ef3a45;
+
+.home-footer {
+  margin: 0 30px;
+  border-top: 3px solid $base-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  bottom: 0;
+}
+.home-footer ul {
+  margin: 10px 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.home-footer a {
+  text-decoration: none;
+}
+.footer-links li {
+  padding: 0 7px;
+  border-right: 2px solid $base-color;
+}
+.footer-links li:last-child {
+  border-right: none;
+}
+.footer-links a {
+  color: $base-color;
+  font-weight: bolder;
+  transition: all 0.5s;
+}
+.footer-links a:hover {
+  font-size: 18px;
+}
+.about-info li {
+  padding: 5px 7px;
+}
+.about-info svg {
+  margin-right: 3px;
+}
+.social-links svg {
+  font-size: 25px;
+}
+.social-links li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  background: rgb(204, 105, 12);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.social-links svg {
+  color: #ffffff;
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.75);
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.85);
+    -moz-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.85);
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.85);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.75);
+  }
+}
+.about-info a,
+.about-info svg,
+.about-info span {
+  color: $base-color;
+}
+.text-footer {
+  text-align: center;
+  color: #92999f;
+  max-width: 250px;
+  margin-bottom: 7px;
+}
+.logo-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.logo-footer .menu-img {
+  width: 30px;
+}

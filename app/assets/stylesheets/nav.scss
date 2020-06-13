@@ -5,11 +5,14 @@ $base-color: #ef3a45;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: sticky;
+  // position: fixed;
+  // top: 0;
+  // width: 100%;
 }
 .home-nav label {
-  z-index: 2;
-  position: absolute;
+  z-index: 3;
+  position: fixed;
+  top: 35px;
   right: 0;
   bottom: -30px;
   margin-right: 5px;
@@ -23,6 +26,7 @@ $base-color: #ef3a45;
   color: #ffffff;
   border: 3px solid #ffffff;
   cursor: pointer;
+  animation: pulse 3s 2s infinite;
 }
 .fa-bars {
   font-size: 27px;
@@ -37,10 +41,6 @@ $base-color: #ef3a45;
   color: $base-color;
   transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 2s;
 }
-
-#menu:checked ~ .nav-menu {
-  display: block;
-}
 .nav-menu {
   padding: 4px;
   display: none;
@@ -52,6 +52,40 @@ $base-color: #ef3a45;
   text-align: center;
   background: #ffffff;
   border: 2px solid $base-color;
+  z-index: 2;
+}
+#menu:checked ~ .nav-menu {
+  display: block;
+  animation: display_block 0.5s linear;
+}
+
+@keyframes display_block {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }
 .logo-image {
   width: 50px;
@@ -73,7 +107,7 @@ $base-color: #ef3a45;
   color: $base-color;
 }
 .nav-menu li:hover {
-  border: 1px solid $base-color;
+  border: 0.5px solid $base-color;
 }
 .nav-menu li:first-child {
   border-top-left-radius: 15px;
@@ -88,16 +122,17 @@ $base-color: #ef3a45;
   color: $base-color;
   text-decoration: none;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   line-height: bottom;
   color: #ffffff;
 }
 .fa-home,
 .fa-drumstick-bite,
 .fa-shopping-bag,
-.fa-user {
+.fa-user,
+.fa-gift {
   color: $base-color;
-  font-size: 14px;
+  font-size: 16px;
   margin-right: 5px;
   color: #ffffff;
 }
@@ -107,4 +142,16 @@ $base-color: #ef3a45;
 
 .logo img {
   width: 100%;
+}
+.nav-menu h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(167, 20, 20);
+}
+.nav-menu h3 span {
+  color: #000000;
+}
+.menu-img {
+  width: 25px;
 }

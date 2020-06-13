@@ -1,29 +1,49 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="wrapper-form">
+  <div class="welcome-wrapper">
+    <h2 class="welcome-title">¡Bienvenido a Tayp<span>App</span>!</h2>
+    <div class="welcome-greetings">
+      <p class="greetings-text">¡Hola, te estabamos esperando!, prueba nuestros riquísimos platos que están esperando por ti...🤤<br>
+        Por favor llena el siguiente formulario para poder continuar y hacer tu pedido:
+      </p>
+      <div class="greetings-img">
+        <img src="/imagenes/frenchfries.png" alt="">
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.label :nombre %>
+      <%= f.text_field :nombre, autofocus: true, autocomplete: "nombre" %>
+    </div>
+    <div class="field">
+      <%= f.label :apellido %>
+      <%= f.text_field :apellido, autocomplete: "apellido" %>
+    </div>
+    <div class="field">
+      <%= f.label :email, "Correo:" %>
+      <%= f.email_field :email, autocomplete: "email" %>
+    </div>
+    <div class="field">
+      <%= f.label :distrito, "Distrito:" %>
+      <%= f.select :distrito, options_for_select([['Independencia','Independencia'],['Comas','Comas'],['Los Olivos','Los Olivos']]),
+      { include_blank: "Selecciona un Distrito" },{class:"distrito"} %>
+    </div>
+    <div class="field">
+      <%= f.label :password, "Contraseña:" %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> carácteres mínimos)</em>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirmación contraseña:" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "registrar" %>
+    </div>
+    <%= link_to  "Iniciar Sesión", new_cliente_session_path, class:"new-session" %>
+  <% end %>
+  <%# <%= render "devise/shared/links" %>
+</div>

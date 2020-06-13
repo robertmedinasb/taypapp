@@ -1,1 +1,14 @@
-<h1>Hola TaypApp</h1>
+<% unless cliente_signed_in? %>
+  <div class="wrapper-login">
+    <div class="login-links">
+      <span>¡Las mejores promociones para ti!</span>
+      <div class="login-buttons">
+        <%= link_to  "Registrate", new_cliente_registration_path %>
+        <%= link_to  "Iniciar Sesión", cliente_session_path %>
+      </div>
+    </div>
+    <div class="display-login" onclick="hidden_login()">
+      <img src="/imagenes/arrow-down.svg" alt="">
+    </div>
+  </div>
+<% end %>
