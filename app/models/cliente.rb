@@ -8,4 +8,8 @@ class Cliente < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_and_belongs_to_many :pedidos
+
+  validates :nombre, presence: true
+  validates :apellido, presence: true
+  validates :distrito, presence: true
 end

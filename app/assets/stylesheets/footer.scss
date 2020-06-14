@@ -97,3 +97,24 @@ $base-color: #ef3a45;
 .logo-footer .menu-img {
   width: 30px;
 }
+.wrapper-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.copyright-info {
+  max-width: 300px;
+  text-align: center;
+}
+@media (min-width: 760px) {
+  .home-footer {
+    flex-direction: row;
+  }
+  .about-info {
+    max-width: 300px;
+  }
+  .copyright-info {
+    max-width: 450px;
+  }
+}

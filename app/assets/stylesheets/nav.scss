@@ -155,3 +155,45 @@ $base-color: #ef3a45;
 .menu-img {
   width: 25px;
 }
+.wrapper-image {
+  display: flex;
+}
+@media (min-width: 760px) {
+  .home-nav {
+    justify-content: space-around;
+  }
+  .home-nav label {
+    display: none;
+  }
+  .nav-menu {
+    height: 100%;
+
+    display: flex;
+    position: inherit;
+    background: none;
+  }
+  .nav-menu h3 {
+    display: none;
+  }
+  .nav-menu li {
+    height: 100%;
+    margin: 0 2px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    transition: all 0.5s;
+  }
+  .nav-menu li a,
+  .nav-menu li svg {
+    transition: all 0.5s;
+  }
+  .nav-menu li:first-child {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 25px;
+  }
+  .nav-menu li:nth-child(5) {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+}
